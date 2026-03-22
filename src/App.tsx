@@ -95,6 +95,7 @@ export default function App() {
           onEnter={handleEnter}
           onDelete={handleDelete}
         />
+        <p className="imprint">Made with ♥ by Timi &amp; Franz</p>
       </footer>
 
       {toast && (
