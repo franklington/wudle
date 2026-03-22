@@ -1,4 +1,4 @@
-import { ANSWER_WORDS } from "../data/wordList"
+import { getWordListSync } from "./wordStore"
 
 const EPOCH_START = new Date("2024-01-01").getTime()
 const MS_PER_DAY = 86_400_000
@@ -8,8 +8,9 @@ export function getDayIndex(): number {
 }
 
 export function getDailyWord(): string {
-  const idx = getDayIndex() % ANSWER_WORDS.length
-  return ANSWER_WORDS[idx]
+  const words = getWordListSync()
+  const idx = getDayIndex() % words.length
+  return words[idx]
 }
 
 export function getTodayDateString(): string {

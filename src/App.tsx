@@ -8,6 +8,7 @@ import StatsModal from './components/StatsModal'
 import HelpModal from './components/HelpModal'
 import { useGame } from './hooks/useGame'
 import { useStats } from './hooks/useStats'
+import { refreshWordList } from './utils/wordStore'
 
 type ModalState = 'none' | 'game' | 'stats' | 'help'
 
@@ -18,6 +19,9 @@ export default function App() {
   const [toast, setToast] = useState<string | null>(null)
   const [modal, setModal] = useState<ModalState>('none')
   const [statsRecorded, setStatsRecorded] = useState(false)
+
+  // Refresh word list from Supabase in background (no-op if env vars not set)
+  useEffect(() => { refreshWordList() }, [])
 
   // Show game-over modal after a brief delay so the last tile reveal finishes
   useEffect(() => {
