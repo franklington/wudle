@@ -1,22 +1,22 @@
 @import "tailwindcss";
 
-/* ─── Custom properties ─────────────────────────────────── */
+/* ─── Custom properties (Duden theme) ──────────────────── */
 :root {
-  --bg:          #111827;
-  --surface:     #1f2937;
-  --border:      #374151;
-  --text:        #f9fafb;
-  --text-muted:  #9ca3af;
+  --bg:          #1a0a0a;
+  --surface:     #2a1010;
+  --border:      #4a1c1c;
+  --text:        #f5f0f0;
+  --text-muted:  #a08080;
 
-  --correct:     #22c55e;
-  --present:     #eab308;
-  --absent:      #374151;
+  --correct:     #c0001a;
+  --present:     #e06020;
+  --absent:      #3a2020;
 
-  --key-bg:      #4b5563;
-  --key-text:    #f9fafb;
-  --key-correct: #22c55e;
-  --key-present: #eab308;
-  --key-absent:  #1f2937;
+  --key-bg:      #4a2828;
+  --key-text:    #f5f0f0;
+  --key-correct: #c0001a;
+  --key-present: #e06020;
+  --key-absent:  #2a1010;
 
   --tile-size:   clamp(52px, 11vw, 62px);
   --tile-gap:    5px;
@@ -117,8 +117,8 @@ html, body, #root {
 
 .tile-empty   { background: transparent; border-color: var(--border); color: var(--text); }
 .tile-filled  { border-color: #6b7280; }
-.tile-correct { background: var(--correct); border-color: var(--correct); color: #000; }
-.tile-present { background: var(--present); border-color: var(--present); color: #000; }
+.tile-correct { background: var(--correct); border-color: var(--correct); color: #fff; }
+.tile-present { background: var(--present); border-color: var(--present); color: #fff; }
 .tile-absent  { background: var(--absent);  border-color: var(--absent);  color: var(--text); }
 
 /* flip reveal */
@@ -187,8 +187,8 @@ html, body, #root {
 .key-wide  { max-width: 64px; min-width: 54px; font-size: 12px; }
 .key:active { opacity: 0.75; }
 
-.key-correct { background: var(--key-correct) !important; color: #000 !important; }
-.key-present { background: var(--key-present) !important; color: #000 !important; }
+.key-correct { background: var(--key-correct) !important; color: #fff !important; }
+.key-present { background: var(--key-present) !important; color: #fff !important; }
 .key-absent  { background: var(--key-absent)  !important; color: #555 !important; }
 
 /* ─── Toast ─────────────────────────────────────────────── */
