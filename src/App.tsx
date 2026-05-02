@@ -9,6 +9,7 @@ import HelpModal from './components/HelpModal'
 import { useGame } from './hooks/useGame'
 import { useStats } from './hooks/useStats'
 import { refreshWordList } from './utils/wordStore'
+import PwaBanner from './components/PwaBanner'
 
 type ModalState = 'none' | 'game' | 'stats' | 'help'
 
@@ -87,6 +88,8 @@ export default function App() {
           shake={game.shake}
         />
       </main>
+
+      <PwaBanner />
 
       <footer className="footer">
         <Keyboard
