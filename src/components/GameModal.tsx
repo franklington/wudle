@@ -62,20 +62,24 @@ export default function GameModal({ status, answer, guesses, evaluations, today,
 
         <div className="definition-box">
           {loading
-            ? <div className="def-loading">Looking up Urban Dictionary…</div>
+            ? <div className="def-loading">Looking up definition…</div>
             : definition
               ? <>
-                  <div className="def-label">🏙️ Urban Dictionary</div>
+                  <div className="def-label">
+                    {definition.source === 'wikipedia' ? '📖 Wikipedia' : '🏙️ Urban Dictionary'}
+                  </div>
                   <p className="def-text">{definition.definition}</p>
                   {definition.example && (
                     <p className="def-example">"{definition.example}"</p>
                   )}
-                  <div className="def-votes">
-                    <span>👍 {definition.thumbsUp}</span>
-                    <span>👎 {definition.thumbsDown}</span>
-                  </div>
+                  {definition.source !== 'wikipedia' && (
+                    <div className="def-votes">
+                      <span>👍 {definition.thumbsUp}</span>
+                      <span>👎 {definition.thumbsDown}</span>
+                    </div>
+                  )}
                 </>
-              : <div className="def-loading">No definition found on Urban Dictionary.</div>
+              : <div className="def-loading">No definition found.</div>
           }
         </div>
 

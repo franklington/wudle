@@ -23,4 +23,5 @@ export interface UDDefinition {
   example: string
   thumbsUp: number
   thumbsDown: number
+  source: 'urban-dictionary' | 'wikipedia'
 }
