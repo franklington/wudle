@@ -49,6 +49,7 @@ body, #root {
   height: 100dvh; /* dynamic viewport height — correct in PWA standalone mode */
   max-width: 500px;
   margin: 0 auto;
+  overflow-x: hidden; /* never let keyboard or board spill past the viewport */
   /* prevent content from being obscured by notch/rounded corners on any side */
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
@@ -182,8 +183,8 @@ body, #root {
 
 .key {
   height: 56px;
-  min-width: 38px;
-  flex: 1;
+  min-width: 0;        /* let flex shrink keys to fit any viewport width */
+  flex: 1 1 0%;
   max-width: 42px;
   background: var(--key-bg);
   color: var(--key-text);
@@ -196,7 +197,7 @@ body, #root {
   touch-action: manipulation;
 }
 
-.key-wide  { max-width: 64px; min-width: 54px; font-size: 12px; }
+.key-wide  { flex: 1.5 1 0%; max-width: 64px; font-size: 12px; }
 .key:active { opacity: 0.75; }
 
 .key-correct { background: var(--key-correct) !important; color: #000 !important; }
