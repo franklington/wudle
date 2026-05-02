@@ -49,6 +49,9 @@ body, #root {
   height: 100dvh; /* dynamic viewport height — correct in PWA standalone mode */
   max-width: 500px;
   margin: 0 auto;
+  /* prevent content from being obscured by notch/rounded corners on any side */
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
 }
 
 .main {
